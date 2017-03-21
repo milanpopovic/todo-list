@@ -1,0 +1,13 @@
+#zadatak, #ime {
+  color: blue;
+  font-weight: bold;
+  font-size: x-large
+}
+
+.zadatak {
+  font-size: x-large
+}
+
+button {
+  font-size: small;
+}
