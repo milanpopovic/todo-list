@@ -75,10 +75,10 @@ class Handler(BaseHandler):
         self._set_headers("text/json")
         self.wfile.write(str.encode(str(odgovor)))
 try:
-    #port = int(os.environ["PORT"])
-    #httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
-    port = 8888
-    httpd = http.server.HTTPServer(('',port), Handler)
+    port = int(os.environ["PORT"])
+    httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
+    #port = 8888
+    #httpd = http.server.HTTPServer(('',port), Handler)
     print("Server startovan...")
     httpd.serve_forever()
 except:
