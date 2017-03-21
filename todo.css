@@ -8,9 +8,13 @@
   font-size: x-large
 }
 
-.dugme {
+.dugme-icon {
   padding-right: 20px;
   width: 2em;
   height: 2em;
   vertical-align: middle
+}
+
+.dugme-code {
+  font-size: x-large;
 }
