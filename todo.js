@@ -87,7 +87,7 @@ function ProcesirajOdgovor(odgovor){
   lista=document.getElementById("lista")
   lista.innerHTML=""
   for (i=0; i < odgovor.length; i++) { 
-     if (getBrowser() === "Safari"){
+     if (getBrowser() === "safari"){
          lista.innerHTML += "<p><span class='dugme-code' onclick='brisiZadatak(this)'>&#128465;</span><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
      }
      else {
