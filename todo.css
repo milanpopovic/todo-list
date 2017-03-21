@@ -9,6 +9,11 @@
   color: blue
 }
 
+.nema-zadataka {
+  font-size: x-large;
+  color: red;
+}
+
 .dugme-icon {
   padding-right: 20px;
   width: 2em;
