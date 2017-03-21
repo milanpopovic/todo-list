@@ -21,7 +21,6 @@ def brisiZadatak(path):
     ime = ime.split("=")[1]
     zadatak = zadatak.split("=")[1]
     for i in range(len(zadaci)):
-        print(zadaci[i]['zadatak'])
         if zadaci[i]['ime'] == ime and zadaci[i]['zadatak'] == zadatak:
             del zadaci[i]
             break
@@ -69,11 +68,11 @@ class Handler(BaseHandler):
         self._set_headers("text/json")
         self.wfile.write(str.encode(str(odgovor)))
 try:
-    #port = int(os.environ["PORT"])
-    #httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
-    port = 8888
-    httpd = http.server.HTTPServer(('',port), Handler)
-    print("Server startovan...port: 8888")
+    port = int(os.environ["PORT"])
+    httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
+    #port = 8888
+    #httpd = http.server.HTTPServer(('',port), Handler)
+    print("Server startovan...")
     httpd.serve_forever()
 except:
     print("Server stopiran")
