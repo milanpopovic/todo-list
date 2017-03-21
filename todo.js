@@ -86,12 +86,13 @@ function ProcesirajOdgovor(odgovor){
   odgovor = JSON.parse(decodeURI(odgovor));
   lista=document.getElementById("lista")
   lista.innerHTML=""
+  browser=getBrowser()
   for (i=0; i < odgovor.length; i++) { 
-     if (getBrowser() === "safari"){
-         lista.innerHTML += "<p><span class='dugme-code' onclick='brisiZadatak(this)'>&#128465;</span><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
+     if (browser === "safari"){
+         lista.innerHTML ="<p><span class='dugme-code' onclick='brisiZadatak(this)'>&#128465;</span><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"+lista.innerHTML
      }
      else {
-     lista.innerHTML += "<p><img src='trash.png' class='dugme-icon' onclick='brisiZadatak(this)'><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
+     lista.innerHTML = "<p><img src='trash.png' class='dugme-icon' onclick='brisiZadatak(this)'><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"+lista.innerHTML
      }
   }
 }
