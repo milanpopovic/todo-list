@@ -10,5 +10,7 @@
 
 .dugme {
   padding-right: 20px;
-  font-size: x-large
+  width: 2em;
+  height: 2em;
+  vertical-align: middle
 }

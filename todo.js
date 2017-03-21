@@ -60,7 +60,7 @@ function ProcesirajOdgovor(odgovor){
   lista=document.getElementById("lista")
   lista.innerHTML=""
   for (i=0; i < odgovor.length; i++) { 
-     lista.innerHTML += "<p><span class='dugme' onclick='brisiZadatak(this)'>&#128465;</span><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
+     lista.innerHTML += "<p><img src='trash.png' class='dugme' onclick='brisiZadatak(this)'><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
   }
 }
 
