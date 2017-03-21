@@ -31,6 +31,17 @@ function listajZadatke(ime, zadatak){
   AjaxZahtev(options, ProcesirajOdgovor)
 }
 
+function brisiZadatak(x){
+ var options = {}
+  ime=document.getElementById('ime').value
+  zadatak = x.nextElementSibling.innerHTML
+  options.metod = "GET"
+  options.putanja  = "brisi-zadatak?ime=" + ime + "&zadatak=" + zadatak
+  options.sadrzaj = ""
+  AjaxZahtev(options, ProcesirajOdgovor)
+}
+
+
 window.onload = function(){
   var form = document.querySelector("form");
   document.getElementById('ime').addEventListener('change',function(event){
@@ -49,17 +60,8 @@ function ProcesirajOdgovor(odgovor){
   lista=document.getElementById("lista")
   lista.innerHTML=""
   for (i=0; i < odgovor.length; i++) { 
-     lista.innerHTML += "<div><span class='zadatak'>"+odgovor[i]['zadatak']+"</span><span><button onclick='Brisi(this)'>Brisi</button></span><div>"
+     lista.innerHTML += "<p><span class='dugme' onclick='brisiZadatak(this)'>&#128465;</span><span class='zadatak'>"+odgovor[i]['zadatak']+ "</span></p>"
   }
 }
 
-function Brisi(x){
- var options = {}
-  ime=document.getElementById('ime').value
-  zadatak = x.parentNode.previousElementSibling.innerHTML
-  options.metod = "GET"
-  options.putanja  = "brisi-zadatak?ime=" + ime + "&zadatak=" + zadatak
-  options.sadrzaj = ""
-  AjaxZahtev(options, ProcesirajOdgovor)
-}
 

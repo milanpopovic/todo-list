@@ -1,6 +1,13 @@
-import http.server, os, json
+import http.server, os, json, pickle
 BaseHandler = http.server.BaseHTTPRequestHandler
-zadaci=[]
+
+try:
+    fileObject = open('storage','rb')
+    zadaci = pickle.load(fileObject)
+    fileObject.close()
+except:
+    zadaci=[]
+    
 def dodajZadatak(path):
     ime, zadatak = path.split("?")[1].split("&")
     ime = ime.split("=")[1]
@@ -68,12 +75,15 @@ class Handler(BaseHandler):
         self._set_headers("text/json")
         self.wfile.write(str.encode(str(odgovor)))
 try:
-    port = int(os.environ["PORT"])
-    httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
-    #port = 8888
-    #httpd = http.server.HTTPServer(('',port), Handler)
+    #port = int(os.environ["PORT"])
+    #httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
+    port = 8888
+    httpd = http.server.HTTPServer(('',port), Handler)
     print("Server startovan...")
     httpd.serve_forever()
 except:
+    fileObject = open('storage','wb')
+    pickle.dump(zadaci,fileObject)
+    fileObject.close()
     print("Server stopiran")
 
