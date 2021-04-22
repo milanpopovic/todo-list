@@ -76,7 +76,7 @@ class Handler(BaseHandler):
         self.wfile.write(str.encode(str(odgovor)))
 try:
     port = int(os.environ["PORT"])
-    port = 9000
+    port = 9900
     httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
     #httpd = http.server.HTTPServer(('',port), Handler)
     print("Server startovan...")
