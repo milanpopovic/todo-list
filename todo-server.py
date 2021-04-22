@@ -4,7 +4,7 @@ BaseHandler = http.server.BaseHTTPRequestHandler
 try:
     fileObject = open('storage','rb')
     zadaci = pickle.load(fileObject)
-    fileObject.close()https://github.com/milanpopovic/zadaci.git
+    fileObject.close()
 except:
     zadaci=[]
     
@@ -75,8 +75,8 @@ class Handler(BaseHandler):
         self._set_headers("text/json")
         self.wfile.write(str.encode(str(odgovor)))
 try:
-    port = int(os.environ["PORT"])
-    port = 9900
+    #port = int(os.environ["PORT"])
+    port = 9000
     httpd = http.server.HTTPServer(('0.0.0.0',port), Handler)
     #httpd = http.server.HTTPServer(('',port), Handler)
     print("Server startovan...")
