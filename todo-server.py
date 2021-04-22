@@ -85,5 +85,4 @@ except:
     fileObject = open('storage','wb')
     pickle.dump(zadaci,fileObject)
     fileObject.close()
-    print("Server stopiran")
-
+    print("Server nije startovan")
